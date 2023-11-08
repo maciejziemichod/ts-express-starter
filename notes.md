@@ -20,6 +20,8 @@ public directory for statik assets?
 schedulers folder for CRONs and that kind of stuff?
 hot reloading
 @controllers imports
+license
+project name in package json
 
 ## Test projects:
 
