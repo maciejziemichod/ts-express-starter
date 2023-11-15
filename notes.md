@@ -20,3 +20,4 @@ schedulers folder for CRONs and that kind of stuff?
 hot reloading
 samples
 update readme
+update package.json version
