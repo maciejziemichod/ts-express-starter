@@ -10,17 +10,13 @@ https://github.com/ljlm0402/typescript-express-starter
 
 ## TODOs:
 
-env files
-samples
 eslint
-app.ts vs server.ts
+env files
+app.ts vs server.ts or both?
 where to put interfaces
 public directory for statik assets?
 schedulers folder for CRONs and that kind of stuff?
+"@controllers" imports
 hot reloading
-@controllers imports
-readme
-
-## Test projects:
-
--   websockets
+samples
+update readme
