@@ -2,10 +2,10 @@
     "name": "ts-express-starter",
     "version": "0.0.2",
     "description": "Starter project for TypeScript Express app.",
-    "main": "src/app.ts",
+    "main": "src/server.ts",
     "scripts": {
         "build": "tsc",
-        "dev": "ts-node src/app.ts"
+        "dev": "ts-node src/server.ts"
     },
     "keywords": [
         "typescript",

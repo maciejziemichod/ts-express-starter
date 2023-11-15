@@ -10,14 +10,13 @@ https://github.com/ljlm0402/typescript-express-starter
 
 ## TODOs:
 
-eslint
-env files
-app.ts vs server.ts or both?
+eslint (don't run prettier probably, leave it to user)
 where to put interfaces
 public directory for statik assets?
 schedulers folder for CRONs and that kind of stuff?
 "@controllers" imports
 hot reloading
 samples
+jest config
 update readme
 update package.json version
