@@ -11,12 +11,10 @@ https://github.com/ljlm0402/typescript-express-starter
 ## TODOs:
 
 where to put interfaces
-public directory for statik assets?
-schedulers folder for CRONs and that kind of stuff?
-"@controllers" imports
 jest config
 samples
 update dependencies
 npm start
 update readme
+check out express recommendations
 update package.json version
