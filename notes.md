@@ -15,8 +15,8 @@ where to put interfaces
 public directory for statik assets?
 schedulers folder for CRONs and that kind of stuff?
 "@controllers" imports
-hot reloading
 samples
 jest config
+update dependencies
 update readme
 update package.json version
