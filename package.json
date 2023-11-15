@@ -1,14 +1,17 @@
 {
-    "name": "lrn",
-    "version": "1.0.0",
-    "description": "",
+    "name": "ts-express-starter",
+    "version": "0.0.2",
+    "description": "Starter project for TypeScript Express app.",
     "main": "src/app.ts",
     "scripts": {
         "build": "tsc",
         "dev": "ts-node src/app.ts"
     },
-    "keywords": [],
-    "author": "",
+    "keywords": [
+        "typescript",
+        "express"
+    ],
+    "author": "Maciej Ziemichod",
     "license": "ISC",
     "devDependencies": {
         "@types/express": "^4.17.20",

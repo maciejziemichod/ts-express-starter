@@ -15,13 +15,11 @@ samples
 eslint
 app.ts vs server.ts
 where to put interfaces
-recheck package.json (esmodules and that kind of stuff)
 public directory for statik assets?
 schedulers folder for CRONs and that kind of stuff?
 hot reloading
 @controllers imports
-license
-project name in package json
+readme
 
 ## Test projects:
 
