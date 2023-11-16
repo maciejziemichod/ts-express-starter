@@ -13,6 +13,10 @@ https://github.com/ljlm0402/typescript-express-starter
 where to put interfaces
 jest config
 samples
+error middleware
+winston
+morgan
+pm2
 update dependencies
 npm start
 update readme
