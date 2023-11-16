@@ -1,12 +1,13 @@
 import express from "express";
 import { middlewares } from "@middlewares/index";
+import { routes } from "@routes/index";
 
 const app = express();
 
 app.use(...middlewares);
 
-app.get("/", (req, res) => {
-    res.send("hello world");
+routes.forEach(([path, route]) => {
+    app.use(path, route);
 });
 
 export default app;

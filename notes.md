@@ -21,4 +21,6 @@ update dependencies
 npm start
 update readme
 check out express recommendations
+global vs router specific middlewares
+import `* as controller` vs `import {get, post}` from `from "@controllers/example"`
 update package.json version
