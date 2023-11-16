@@ -23,4 +23,7 @@ update readme
 check out express recommendations
 global vs router specific middlewares
 import `* as controller` vs `import {get, post}` from `from "@controllers/example"`
+controllers wrapper to do auto try catch + next(error) for async functions?
+secure app.listen
 update package.json version
+remove this file, put rest into github issues
