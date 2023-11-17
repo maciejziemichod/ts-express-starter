@@ -1,3 +1,3 @@
-import { example } from "@routes/example";
+import { ExampleRoute } from "@routes/example";
 
-export const routes = [example] as const;
+export const routes = [ExampleRoute] as const;

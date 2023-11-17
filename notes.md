@@ -10,20 +10,17 @@ https://github.com/ljlm0402/typescript-express-starter
 
 ## TODOs:
 
+error middleware + custom error class?
 jest config
 winston
 morgan
 pm2
-update dependencies
-npm start
-update readme
 check out express recommendations
+npm start
 global vs router specific middlewares
-import `* as controller` vs `import {get, post}` from `from "@controllers/example"`
-controllers wrapper to do auto try catch + next(error) for async functions?
 secure app.listen
 change `example` to `user`?
-better error handling and maybe validate in middlewares? Or in separate service layer, think where is the best place for validators (check out other frameworks?)
-error middleware?
+update dependencies
+update readme
 update package.json version
 remove this file, put rest into github issues

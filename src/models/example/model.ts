@@ -1,26 +1,6 @@
-import z from "zod";
+import { CreateExample, Example, UpdateExample } from "@models/example/schema";
 
-const idSchema = z.string();
-const exampleSchema = z.object({
-    id: idSchema,
-    name: z
-        .string({ required_error: "Name is required." })
-        .trim()
-        .min(1, "Name cannot be empty."),
-    email: z
-        .string({ required_error: "Email is required." })
-        .trim()
-        .min(1, "Email cannot be empty.")
-        .email("Invalid email."),
-    role: z.enum(["admin", "user"], { invalid_type_error: "Invalid role." }),
-});
-const createExampleSchema = exampleSchema.omit({ id: true });
-const updateExampleSchema = createExampleSchema.partial();
-
-type Example = z.infer<typeof exampleSchema>;
-type CreateExample = z.infer<typeof createExampleSchema>;
-type UpdateExample = z.infer<typeof updateExampleSchema>;
-
+// dummy data
 const exampleData: Example[] = [
     { id: "1700184314435", name: "Joe", email: "joe@email.com", role: "admin" },
     {
@@ -70,11 +50,4 @@ export const ExampleModel = {
     create,
     update,
     remove,
-} as const;
-
-export const ExampleSchemas = {
-    idSchema,
-    exampleSchema,
-    createExampleSchema,
-    updateExampleSchema,
 } as const;

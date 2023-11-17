@@ -1,7 +1,8 @@
 import { Request, Response } from "express";
-import { ExampleModel, ExampleSchemas } from "@models/example";
+import { ExampleSchemas } from "@models/example/schema";
+import { ExampleModel } from "@/models/example/model";
 
-export async function getAll(_: Request, res: Response): Promise<void> {
+async function getAll(_: Request, res: Response): Promise<void> {
     try {
         const data = await ExampleModel.getAll();
 
@@ -11,9 +12,9 @@ export async function getAll(_: Request, res: Response): Promise<void> {
     }
 }
 
-export async function getById(req: Request, res: Response): Promise<void> {
+async function getById(req: Request, res: Response): Promise<void> {
     try {
-        const id = ExampleSchemas.idSchema.parse(req.params.id);
+        const id = ExampleSchemas.id.parse(req.params.id);
 
         const example = await ExampleModel.getById(id);
 
@@ -27,9 +28,9 @@ export async function getById(req: Request, res: Response): Promise<void> {
     }
 }
 
-export async function create(req: Request, res: Response): Promise<void> {
+async function create(req: Request, res: Response): Promise<void> {
     try {
-        const example = ExampleSchemas.createExampleSchema.parse(req.body);
+        const example = ExampleSchemas.createExample.parse(req.body);
 
         const newExample = await ExampleModel.create(example);
 
@@ -39,10 +40,10 @@ export async function create(req: Request, res: Response): Promise<void> {
     }
 }
 
-export async function update(req: Request, res: Response): Promise<void> {
+async function update(req: Request, res: Response): Promise<void> {
     try {
-        const id = ExampleSchemas.idSchema.parse(req.params.id);
-        const example = ExampleSchemas.updateExampleSchema.parse(req.body);
+        const id = ExampleSchemas.id.parse(req.params.id);
+        const example = ExampleSchemas.updateExample.parse(req.body);
 
         const updatedExample = await ExampleModel.update(id, example);
 
@@ -52,9 +53,9 @@ export async function update(req: Request, res: Response): Promise<void> {
     }
 }
 
-export async function remove(req: Request, res: Response): Promise<void> {
+async function remove(req: Request, res: Response): Promise<void> {
     try {
-        const id = ExampleSchemas.idSchema.parse(req.params.id);
+        const id = ExampleSchemas.id.parse(req.params.id);
 
         await ExampleModel.remove(id);
 
@@ -63,3 +64,11 @@ export async function remove(req: Request, res: Response): Promise<void> {
         res.status(409).json(err);
     }
 }
+
+export const ExampleController = {
+    getAll,
+    getById,
+    create,
+    update,
+    remove,
+} as const;
