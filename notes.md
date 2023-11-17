@@ -10,10 +10,7 @@ https://github.com/ljlm0402/typescript-express-starter
 
 ## TODOs:
 
-where to put interfaces
 jest config
-samples
-error middleware
 winston
 morgan
 pm2
@@ -25,5 +22,8 @@ global vs router specific middlewares
 import `* as controller` vs `import {get, post}` from `from "@controllers/example"`
 controllers wrapper to do auto try catch + next(error) for async functions?
 secure app.listen
+change `example` to `user`?
+better error handling and maybe validate in middlewares? Or in separate service layer, think where is the best place for validators (check out other frameworks?)
+error middleware?
 update package.json version
 remove this file, put rest into github issues
