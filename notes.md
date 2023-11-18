@@ -1,16 +1,5 @@
-## Sources:
-
-https://github.com/w3cj/express-api-starter-ts
-https://www.youtube.com/watch?v=vDLE8hqzA8I
-
-https://github.com/geshan/expressjs-structure/tree/master
-https://blog.logrocket.com/organizing-express-js-project-structure-better-productivity/
-
-https://github.com/ljlm0402/typescript-express-starter
-
-## TODOs:
-
 jest config
+env validation
 winston
 morgan
 pm2
@@ -32,4 +21,5 @@ read https://blog.risingstack.com/node-js-security-checklist/
 update dependencies
 update readme
 update package.json version
-remove this file, put rest into github issues
+
+https://github.com/ljlm0402/typescript-express-starter/tree/master/lib/default
