@@ -1,5 +1,5 @@
 import express from "express";
-import { example } from "@middlewares/example";
+import { example } from "@/middlewares/global/example";
 
 export const middlewares = [
     express.json(),

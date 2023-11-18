@@ -12,6 +12,7 @@
             "@/*": ["./src/*"],
             "@configs/*": ["./src/configs/*"],
             "@controllers/*": ["./src/controllers/*"],
+            "@exceptions/*": ["./src/exceptions/*"],
             "@middlewares/*": ["./src/middlewares/*"],
             "@models/*": ["./src/models/*"],
             "@routes/*": ["./src/routes/*"],

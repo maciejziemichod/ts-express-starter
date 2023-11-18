@@ -10,16 +10,17 @@ https://github.com/ljlm0402/typescript-express-starter
 
 ## TODOs:
 
-error middleware + custom error class?
 jest config
 winston
 morgan
 pm2
 check out express recommendations
 npm start
-global vs router specific middlewares
 secure app.listen
 change `example` to `user`?
+status codes enum
+validator.js as optional for complex string validation
+more complex error handling https://www.toptal.com/nodejs/node-js-error-handling
 update dependencies
 update readme
 update package.json version

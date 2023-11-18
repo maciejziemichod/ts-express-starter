@@ -1,34 +1,47 @@
-import { Request, Response } from "express";
+import { NextFunction, Request, Response } from "express";
 import { ExampleSchemas } from "@models/example/schema";
-import { ExampleModel } from "@/models/example/model";
+import { ExampleModel } from "@models/example/model";
+import { HttpException } from "@exceptions/HttpException";
 
-async function getAll(_: Request, res: Response): Promise<void> {
+async function getAll(
+    _: Request,
+    res: Response,
+    next: NextFunction,
+): Promise<void> {
     try {
         const data = await ExampleModel.getAll();
 
         res.status(200).json(data);
     } catch (err) {
-        res.status(404).json(err);
+        next(err);
     }
 }
 
-async function getById(req: Request, res: Response): Promise<void> {
+async function getById(
+    req: Request,
+    res: Response,
+    next: NextFunction,
+): Promise<void> {
     try {
         const id = ExampleSchemas.id.parse(req.params.id);
 
         const example = await ExampleModel.getById(id);
 
         if (example === undefined) {
-            throw new Error("example doesn't exist");
+            throw new HttpException(404, "example doesn't exist");
         }
 
         res.status(200).json(example);
     } catch (err) {
-        res.status(404).json(err);
+        next(err);
     }
 }
 
-async function create(req: Request, res: Response): Promise<void> {
+async function create(
+    req: Request,
+    res: Response,
+    next: NextFunction,
+): Promise<void> {
     try {
         const example = ExampleSchemas.createExample.parse(req.body);
 
@@ -36,24 +49,36 @@ async function create(req: Request, res: Response): Promise<void> {
 
         res.status(201).json(newExample);
     } catch (err) {
-        res.status(409).json(err);
+        next(err);
     }
 }
 
-async function update(req: Request, res: Response): Promise<void> {
+async function update(
+    req: Request,
+    res: Response,
+    next: NextFunction,
+): Promise<void> {
     try {
         const id = ExampleSchemas.id.parse(req.params.id);
         const example = ExampleSchemas.updateExample.parse(req.body);
 
         const updatedExample = await ExampleModel.update(id, example);
 
+        if (updatedExample === undefined) {
+            throw new HttpException(404, "example doesn't exist");
+        }
+
         res.status(200).json(updatedExample);
     } catch (err) {
-        res.status(409).json(err);
+        next(err);
     }
 }
 
-async function remove(req: Request, res: Response): Promise<void> {
+async function remove(
+    req: Request,
+    res: Response,
+    next: NextFunction,
+): Promise<void> {
     try {
         const id = ExampleSchemas.id.parse(req.params.id);
 
@@ -61,7 +86,7 @@ async function remove(req: Request, res: Response): Promise<void> {
 
         res.sendStatus(204);
     } catch (err) {
-        res.status(409).json(err);
+        next(err);
     }
 }
 
