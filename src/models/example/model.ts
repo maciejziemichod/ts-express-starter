@@ -31,6 +31,10 @@ function create(example: CreateExample): Example {
 
 function update(id: string, example: UpdateExample): Example | undefined {
     const index = exampleData.findIndex((d) => d.id === id);
+    if (index === -1) {
+        return;
+    }
+
     const exampleToUpdate = exampleData[index];
 
     exampleData.splice(index, 1, { ...exampleToUpdate, ...example });
@@ -40,6 +44,9 @@ function update(id: string, example: UpdateExample): Example | undefined {
 
 function remove(id: string): void {
     const index = exampleData.findIndex((d) => d.id === id);
+    if (index === -1) {
+        return;
+    }
 
     exampleData.splice(index, 1);
 }
